@@ -8,7 +8,7 @@ server.use(express.json());
 server.get('/test', (req, res) =>{
     const address = req.connection.remoteAddress;
     console.log(address);
-    return res.status(200); 
+    return res.status(200).res.json({message: `The origin IP is ${address}`})
 })
 
 module.exports = server; 
